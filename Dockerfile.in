@@ -27,6 +27,7 @@ RUN yum update -y \
 RUN test -h /etc/localtime && rm -f /etc/localtime && cp /usr/share/zoneinfo/UTC /etc/localtime || true
 
 ADD ./bin/node-problem-detector /node-problem-detector
+ADD ./bin/check-fd /check-fd
 ADD ./bin/log-counter /home/kubernetes/bin/log-counter
 ADD config /config
 RUN chmod +x /config/plugin/*.sh
