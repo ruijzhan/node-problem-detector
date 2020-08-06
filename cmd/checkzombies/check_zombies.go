@@ -72,7 +72,7 @@ func main() {
 
 	fmt.Fprintf(os.Stdout, "zombie processes: %d, total: %d", zombiesTotal, procTotal)
 
-	if procTotal / 100 * threshold < zombiesTotal {
+	if float64(zombiesTotal) / float64(procTotal) > float64(threshold) / 100 {
 		os.Exit(NONOK)
 	} else {
 		os.Exit(OK)
